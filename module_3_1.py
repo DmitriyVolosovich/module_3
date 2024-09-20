@@ -1,20 +1,20 @@
 from xmlrpc.client import boolean
-calls=0
+calls = 0
 def count_calls():
     global calls
-    calls+=1
+    calls += 1
     return calls
 def string_info(string):
-    string=(len(string), string.upper(), string.lower())
+    string = (len(string), string.upper(), string.lower())
     count_calls()
     return string
 def is_contains(string, list_to_search):
-    fl=bool
+    fl = bool
     for elem in list_to_search:
         if elem.lower() == string.lower():
-            fl=True
+            fl = True
         else:
-            fl=False
+            fl = False
     count_calls()
     return  fl
 print(string_info('Capybara'))
